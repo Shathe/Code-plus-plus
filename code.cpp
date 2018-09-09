@@ -1,6 +1,11 @@
 #include <iostream>
 using namespace std;
+#include <vector>
 
+
+/**
+Some code in C++ just to remember its sintaxis
+*/
 
 
 // class template:
@@ -11,7 +16,6 @@ class mycontainer {
     mycontainer (T arg) {element=arg;} // constructor
     T increase () {return ++element;} // method
 };
-
 
 
 /* Class */
@@ -29,6 +33,17 @@ int doubleCircum (Circle circ);
 
 
 int main () {
+
+	int foo[5];         
+	int foo2 [] = {16, 2, 77, 40, 12071};
+
+	std::vector<int> v1 (5,20);
+	v1.insert(v1.begin()+2, 0);
+	for ( int n=0 ; n<v1.size() ; ++n )	{
+		cout << v1[n] << endl;
+	}
+	
+
 	Circle circle (10.0);
 
 	cout << "circle's circumference: " << circle.circum() << '\n';
@@ -58,4 +73,3 @@ int doubleCircum (Circle circ){
 		return 2 * circ.circum();
 }
 
-// usar templates

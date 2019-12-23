@@ -1,7 +1,9 @@
 #include <iostream>
 using namespace std;
 #include <vector>
-
+#include <map>
+#include <iostream>
+#include <cassert>
 
 /**
 Some code in C++ just to remember its sintaxis
@@ -34,30 +36,47 @@ int doubleCircum (Circle circ);
 
 int main () {
 
-	int foo[5];         
-	int foo2 [] = {16, 2, 77, 40, 12071};
+  int foo[5];         
+  int foo2 [] = {16, 2, 77, 40, 12071};
 
-	std::vector<int> v1 (5,20);
-	v1.insert(v1.begin()+2, 0);
-	for ( int n=0 ; n<v1.size() ; ++n )	{
-		cout << v1[n] << endl;
-	}
-	
+  std::vector<int> v1 (5,20);
+  v1.insert(v1.begin()+2, 0);
+  for ( int n=0 ; n<v1.size() ; ++n )  {
+    cout << v1[n] << endl;
+  }
+  
 
-	Circle circle (10.0);
+  Circle circle (10.0);
 
-	cout << "circle's circumference: " << circle.circum() << '\n';
-	cout << "circle's circumference doubled: " << doubleCircum(circle) << '\n';
-	cout << "circle's circumference: " << (&circle)->circum() << '\n';
+  cout << "circle's circumference: " << circle.circum() << '\n';
+  cout << "circle's circumference doubled: " << doubleCircum(circle) << '\n';
+  cout << "circle's circumference: " << (&circle)->circum() << '\n';
 
-	int i = 5;
-	cout << i;
-	odd (i);
+  int i = 5;
+  cout << i;
+  odd (i);
 
-	mycontainer<int> myint (7);
-	cout << myint.increase() << endl;
+  mycontainer<int> myint (7);
+  cout << myint.increase() << endl;
+  
+    map< char, int > mp; 
+  // inserting values  
+  mp['a']=5; 
+  mp['b']=10; 
+  mp['c']=15; 
+  mp['d']=20; 
+  mp['e']=30; 
 
-	return 0;
+  map<char, int>::iterator it ; 
+  it = mp.find('b'); 
+      
+  if(it == mp.end()) 
+      cout << "Key-value pair not present in map" ; 
+  else
+      cout << "Key-value pair present : " 
+        << it->first << "->" << it->second ; 
+  
+  return 0;
 }
 
 
@@ -70,6 +89,5 @@ void odd (int x)
 }
 
 int doubleCircum (Circle circ){
-		return 2 * circ.circum();
+    return 2 * circ.circum();
 }
-

@@ -91,3 +91,40 @@ void odd (int x)
 int doubleCircum (Circle circ){
     return 2 * circ.circum();
 }
+
+/*
+struct SparseVector {
+  // map<int,float> values;
+  int size;
+  vector<std::pair<int,float>> values; // first: component, second:value (sorted by first)
+};
+
+
+float dotProduct(const SparseVector& vector1, const SparseVector& vector2) {
+  if (vector2.size!=vector1.size) // error
+    return 0.f;
+  float result=0.f;
+  for(auto it=vector1.begin(), itend=vector1.end(), itend2=vector2.end(); it != itend; it++){
+    auto it2 = vector2.find(it->first);
+    if(it2!=it2end){
+      result+=it1->second*it2->second;
+    }
+  }
+  return result;
+}
+
+float dotProductV2(const SparseVector& vector1, const SparseVector& vector2) {
+  if (vector2.size!=vector1.size) // error
+    return 0.f;
+  float result=0.f;
+  auto itend=vector1.values.end(), itend2=vector2.values.end();
+  for(auto it=vector1.values.begin(), it2=vector2.values.begin(); it!=itend; it++){
+    while(it->first>it2->first)
+      if(it2++==itend2)
+        return result;
+    if(it->first==it2->first){
+      result+=it2->second*it->second;
+    }
+}
+
+*/
